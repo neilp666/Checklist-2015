@@ -11,14 +11,25 @@
  * file per style scope.
  *
  */
- @import url(http://fonts.googleapis.com/css?family=Oswald:400,700|Merriweather:400,300);
+ @import url(//fonts.googleapis.com/css?family=Oswald:400,700|Merriweather:400,300);
+ @import url(//fonts.googleapis.com/css?family=Pacifico|Open+Sans:300);
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
-
  body {
-  padding-top: 20px;
+  padding-top: 30px;
+ }
+
+ @mixin nav_link_hover {
+  transition: 0.4s;
+  color: lighten(#222, 30%);
+  text-decoration: none;
 }
+
+
+
+
+
 
 a {
   color: darken(#e7e7e7, 70%);
@@ -75,4 +86,49 @@ a {
 .item:nth-child(n+1) {
   padding-top: 1.5em;
 }
+
+
+.landing-page {
+  background: url('https://dl.dropboxusercontent.com/s/09l892wk2umz6tm/checklist.jpg');
+  text-align: center;
+  background-size: cover;
+ 
+h2 {
+  padding-top: 3em;
+  text-shadow: 0px 3px 4px #555;
+  font-size: 4.5rem;
+  font-weight: 300;
+  color: white;
+  }
+
+  p {
+    font-weight: 300;
+  color: white;
+    font-size: 2.5rem;
+  }
+ }
+
+  #main_footer {
+  padding: 17.5em 25%;
+  
+  .copyright {
+    float: left;
+    font-size: 1.0em;
+    margin: 0;
+   }
+   nav {
+    float: right;
+    i {
+      color: black;
+      margin-left: 1em;
+      padding-top: .2em;
+      &:hover {
+        color: white;
+      }
+    }
+   }
+ }
+
+
+
 
