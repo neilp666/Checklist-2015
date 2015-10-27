@@ -11,5 +11,68 @@
  * file per style scope.
  *
  */
+ @import url(http://fonts.googleapis.com/css?family=Oswald:400,700|Merriweather:400,300);
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+
+ body {
+  padding-top: 20px;
+}
+
+a {
+  color: darken(#e7e7e7, 70%);
+}
+
+.navbar {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+}
+
+.navbar-default {
+
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #fff;
+
+  .navbar-nav > li > a {
+    color: #222;
+  }
+
+  .navbar-link {
+    color: #222;
+  }
+
+  .navbar-brand {
+    color: #222;
+    letter-spacing: 1.25px;
+  }
+
+}
+
+/* Item styles */
+
+.item {
+  border-bottom: 1px solid #e7e7e7;
+  padding-bottom: 1.5em;
+  .item-title {
+    font-family: 'Oswald', sans-serif;
+    margin-top: 0;
+  }
+  .item-desc {
+    font-size: 1em;
+  }
+  .time-ago {
+    color: darken(#e7e7e7, 50%);
+    font-size: 0.85em;
+    letter-spacing: 1.25;
+  }
+  .item-sub-title {
+    margin-bottom: 0;
+  }
+}
+
+.item:nth-child(n+1) {
+  padding-top: 1.5em;
+}
+
