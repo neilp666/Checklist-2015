@@ -1,16 +1,58 @@
 <% if user_signed_in? %>
+   <div class="col-md-6 col-md-offset-3">
+
   <% @items.each do |item| %>
 
   <% if item.completed? %>
 
-    <h2 style="opacity: 0.5;"><strike><%= link_to item.title, item %></strike></h2>
-    <p style="opacity: 0.5;"><%= item.description %></p>
-    <p style="opacity: 0.5;"> Completed <%= time_ago_in_words(item.completed_at) %> ago</p>
-    <p><%= link_to "Mark as Complete", complete_item_path(item), method: :patch %></p>
-    <p><%= link_to "Delete", method: :delete, data: { confirm: "Are you Sure?" } %></p>
-    <% else %>
-  <% end %>
-  <% end %>
+  <div class="row item">
+      <div class"col-md-8">
+        <h2 style="opacity: 0.5;"><strike><%= link_to item.title, item %></strike></h2>
+         <p style="opacity: 0.5;"><%= item.description %></p>
+         <p style="opacity: 0.5;"> Completed <%= time_ago_in_words(item.completed_at) %> ago</p>
+      </div>
+
+  <div class="col-md-2">
+    <p><%= link_to complete_item_path(item), method: :patch do %></p>
+      <i class="fa fa-lg fa-check"></i>
+    <% end %>
+  </div>
+
+  <div class="col-md-2">
+    <p><%= link_to item, method: :delete, data: { confirm: "Are you Sure?" } do %></p>
+    <i class="fa fa-lg fa-trash"></i>
+    <% end %>
+    </div>
+    </div>
+
+  <% else %>
+    <div class="row item">
+        <div class="col-md-8">
+          <h2><%= link_to item.title, item %></h2>
+           <p><%= item.description %></p>
+           <p>Created at <%= time_ago_in_words(item.created_at) %> ago</p>
+          </div>
+
+          <div class="col-md-2">
+           <p><%= link_to complete_item_path(item), method: :patch do %></p>
+             <i class="fa fa-lg fa-check"></i>
+            <% end %>
+          </div>
+
+          <div class="col-md-2">
+           <p><%= link_to item, method: :delete, data: { confirm: "Are you Sure?" } do %></p>
+              <i class="fa fa-lg fa-trash"></i>
+      <% end %>
+      </div>
+
+      </div>
+
+    <% end %>
+
+    <% end %>
+
+  </div>
+
   <% else %>
     <%= render 'layouts/static_landing_page' %>
   <% end %>
