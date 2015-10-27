@@ -6,5 +6,8 @@ Checklist app
 - Rails 4.1.7
 - Bootstrap
 - Simple form
+- Devise
+- Sqlite (development)
+- Postgres (production)
 
 
